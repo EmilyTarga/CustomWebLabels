@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Custom Tab Labels",
+  "version": "1.0",
+  "description": "A simple description that allows to configure a label to load on the page. Really usefull to distinguish between DEV, TEST and PROD environments",
+  "icons": {
+    "32": "icons/custom-label-32.png",
+    "48": "icons/custom-label-48.png",
+    "64": "icons/custom-label-64.png",
+    "128": "icons/custom-label-128.png"
+  },
+  "background": {
+    "scripts": [
+      "background_scripts/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_scripts/label.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup/label.html",
+    "default_title": "Custom Label Settings"
+  },
+  "permissions": [
+    "tabs",
+    "cookies",
+    "<all_urls>",
+    "storage"
+  ]
+}

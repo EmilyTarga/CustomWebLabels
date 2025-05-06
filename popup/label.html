@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="label.css">
+  </head>
+  <body>
+    <div id="list-view">
+      <ul id="label-list"></ul>
+      <button id="add-new">+ Add New</button>
+    </div>
+
+    <form id="form-view" class="hidden">
+      <h2>Style Labels</h2>
+
+      <!-- All the same fields as before -->
+      <label for="urls">Urls:</label><br>
+      <input type="text" id="urls"><br><br>
+
+      <label for="label">Label:</label><br>
+      <input type="text" id="label"><br><br>
+
+      <label for="backgroundColor">Background Color:</label><br>
+      <input type="text" id="backgroundColor" type="color"><br><br>
+
+      <label for="height">Height:</label><br>
+      <input type="text" id="height"><br><br>
+
+
+      <label for="position">Alignment:</label><br>
+      <div class="alignment-picker">
+        <option data_justify-content="flex-start" data_align-items="flex-start"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 443.49">
+            <path fill-rule="nonzero" d="M315.35 387.2v56.29H0V387.2h315.35zM369.18 0v56.29H0V0h369.18zM512 129.05v56.31H0v-56.31h512zM203.33 258.12v56.3H0v-56.3h203.33z" />
+          </svg>
+        </option>
+        <option justify-content="center" align-items="flex-start"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 409.23">
+            <path fill-rule="nonzero" d="M426.33 0v51.94H85.67V0h340.66zM512 119.21v51.83H0v-51.83h512zM349.81 238.18v51.95H162.19v-51.95h187.62zm51.69 119.1v51.95H110.51v-51.95H401.5z" />
+          </svg></option>
+        <option justify-content="flex-end" align-items="flex-start"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 443.49">
+            <path fill-rule="nonzero" d="M512 387.2v56.29H196.65V387.2H512zM512 0v56.29H142.82V0H512zm0 129.05v56.31H0v-56.31h512zm0 129.07v56.31H308.67v-56.31H512z" />
+          </svg></option>
+        <option data-align="middle-left"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 443.49">
+            <path fill-rule="nonzero" d="M315.35 387.2v56.29H0V387.2h315.35zM369.18 0v56.29H0V0h369.18zM512 129.05v56.31H0v-56.31h512zM203.33 258.12v56.3H0v-56.3h203.33z" />
+          </svg></option>
+        <option data-align="center"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 409.23">
+            <path fill-rule="nonzero" d="M426.33 0v51.94H85.67V0h340.66zM512 119.21v51.83H0v-51.83h512zM349.81 238.18v51.95H162.19v-51.95h187.62zm51.69 119.1v51.95H110.51v-51.95H401.5z" />
+          </svg></option>
+        <option data-align="middle-right"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 443.49">
+            <path fill-rule="nonzero" d="M512 387.2v56.29H196.65V387.2H512zM512 0v56.29H142.82V0H512zm0 129.05v56.31H0v-56.31h512zm0 129.07v56.31H308.67v-56.31H512z" />
+          </svg></option>
+        <option data-align="bottom-left"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 443.49">
+            <path fill-rule="nonzero" d="M315.35 387.2v56.29H0V387.2h315.35zM369.18 0v56.29H0V0h369.18zM512 129.05v56.31H0v-56.31h512zM203.33 258.12v56.3H0v-56.3h203.33z" />
+          </svg></option>
+        <option data-align="bottom-center"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 409.23">
+            <path fill-rule="nonzero" d="M426.33 0v51.94H85.67V0h340.66zM512 119.21v51.83H0v-51.83h512zM349.81 238.18v51.95H162.19v-51.95h187.62zm51.69 119.1v51.95H110.51v-51.95H401.5z" />
+          </svg></option>
+        <option data-align="bottom-right"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 443.49">
+            <path fill-rule="nonzero" d="M512 387.2v56.29H196.65V387.2H512zM512 0v56.29H142.82V0H512zm0 129.05v56.31H0v-56.31h512zm0 129.07v56.31H308.67v-56.31H512z" />
+          </svg></option>
+      </div>
+
+          <p>Selected Alignment: <span id="selected-alignment">None</span></p>
+<!--
+<label for="top">Top:</label><br>
+<input type="text" id="top"><br><br>
+
+<label for="left">Left:</label><br>
+<input type="text" id="left"><br><br>
+
+<label for="zIndex">Z-Index:</label><br>
+<input type="number" id="zIndex"><br><br>
+
+<label for="width">Width:</label><br>
+<input type="text" id="width"><br><br>
+
+<label for="display">Display:</label><br>
+<input type="text" id="display"><br><br>
+
+<label for="alignItems">Align Items:</label><br>
+<input type="text" id="alignItems"><br><br>
+
+<label for="justifyContent">Justify Content:</label><br>
+<input type="text" id="justifyContent"><br><br>
+
+<label for="fontWeight">Font Weight:</label><br>
+<input type="text" id="fontWeight"><br><br> 
+-->
+
+      <button type="submit">Save</button>
+      <button type="button" id="cancel">Cancel</button>
+      <button type="button" id="deleteButton">Delete Style</button>
+    </form>
+
+    <script src="label.js"></script>
+  </body>
+</html>
+
