@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const deleteButton = document.getElementById('deleteButton');
   const labelList = document.getElementById('label-list');
 
+  let justifyContent = ""
+  let alignItems = ""
+
   document.querySelectorAll('.alignment-picker option').forEach(button => {
   button.addEventListener('click', () => {
     
@@ -22,14 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
       
     });
  
-    const justifyContent = button.getAttribute('data_justify-content');
-    const alignItems = button.getAttribute('data_align-items');
-    document.getElementById('selected-alignment').textContent = justifyContent + " - " + alignItems;
-
+    justifyContent = button.getAttribute('data_justify-content');
+    alignItems = button.getAttribute('data_align-items');
   });
 });
-
-
 
   function showListView() {
     listView.classList.remove('hidden');
@@ -107,18 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let labelData = {
       urls: document.getElementById('urls').value,
       label: document.getElementById('label').value,
-      position: 'sticky', // document.getElementById('position').value,
       backgroundColor: document.getElementById('backgroundColor').value,
-      height: '5vh',// document.getElementById('height').value,
+      height: document.getElementById('height').value,
+      display: 'flex', // document.getElementById('display').value,
+      alignItems: alignItems,
+      justifyContent: justifyContent,
 
+      position: 'sticky', // document.getElementById('position').value,
       top: 0,// document.getElementById('top').value,
       left: 0,// document.getElementById('left').value,
       zIndex: 10000000,// document.getElementById('zIndex').value,
       width: '100vw',// document.getElementById('width').value,
-      display: 'flex', // document.getElementById('display').value,
-      alignItems: 'center',// document.getElementById('alignItems').value,
-      justifyContent: 'center',// document.getElementById('justifyContent').value,
-      fontWeight: 'bold',// document.getElementById('fontWeight').value,
+     fontWeight: 'bold',// document.getElementById('fontWeight').value,
     };
 
     const labelId = currentLabelId || `label_${Date.now()}`;
